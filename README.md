@@ -1,10 +1,10 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Frameworks-JS/NextJS-Tutorial)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este é um projeto utilizando o [Next.js](https://nextjs.org/) iniciando com o comando [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Começando
 
-First, run the development server:
+Primeiramente rode em modo de desenvolvimento:
 
 ```bash
 npm run dev
@@ -12,19 +12,19 @@ npm run dev
 yarn dev
 ```
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Frameworks-JS/NextJS-Tutorial)
+[![Rode agora no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Frameworks-JS/NextJS-Tutorial)
 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra na sua máquina [http://localhost:3000](http://localhost:3000)no seu navegador e veja o resultado.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Você pode iniciar, modificando a página `pages/index.js`. A página atualizada assim que salvá-la (hot-reload).
 
-## Learn More
+## Aprenda mais
 
-To learn more about Next.js, take a look at the following resources:
+Para aprender mais sobre Next.js, dê uma olhada nas seguintes fontes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Documentação Next.js](https://nextjs.org/docs) - Aprenda sobre Next.js - funcionalidades e API.
+- [Aprenda Next.js](https://nextjs.org/learn) - um tutorial interativo Next.js.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
