@@ -1,13 +1,21 @@
 import React, { useEffect } from 'react';
+import Link from 'next/link'
 
-//Server Side Render
+//Server Side Generator
 import axios from 'axios';
 
 function Users({users}) {
+    // console.log(users);
     return (
         <div>
             {users.map((user) => (
-              <div>{user.name}</div>  
+                
+              <div>
+                  
+                  <Link href='/profile/[id]' as={`profile/${user.id}`}>
+                      <a>{user.id} / {user.name}</a>
+                  </Link>
+              </div>  
             ))}
         </div>
     );
