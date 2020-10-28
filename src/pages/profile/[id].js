@@ -1,12 +1,15 @@
-// import {useRouter} from 'next/router';
+import {useRouter} from 'next/router';
 import axios from 'axios';
 
 function Profile({user}) {
     //ou user = props.user;
-    // const router = useRouter();
+    const router = useRouter();
+
+    if(router.isFallback) return <h1>Carregando...</h1>;
+    
     // console.log(router);
     // return <h1>profile {router.query.id}</h1>;
-    return <div>
+    return <div key={user.id}>
         <p>{user.id}</p>
         <p>{user.name}</p>
         <p>{user.username}</p>
@@ -20,6 +23,9 @@ export async function getStaticProps(context) {
     
     const user = await response.data[0];
 
+    //simulando um timeout
+    await new Promise( res => setTimeout(res,4000));
+
     return {
       props: { user } , // will be passed to the page component as props
     }
@@ -30,7 +36,7 @@ export async function getStaticProps(context) {
       'https://jsonplaceholder.typicode.com/users'
     );
     
-    const users = await response.data;
+    const users = await response.data.slice(0,5);
 
     const paths = users.map((user) => {
       return { params: { id: String(user.id) } };
