@@ -10,7 +10,7 @@ function Users({users}) {
         <div>
             {users.map((user) => (
                 
-              <div>
+              <div key={user.id}>
                   
                   <Link href='/profile/[id]' as={`profile/${user.id}`}>
                       <a>{user.id} / {user.name}</a>
