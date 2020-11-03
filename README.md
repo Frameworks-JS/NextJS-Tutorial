@@ -1,38 +1,41 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Frameworks-JS/NextJS-Tutorial)
+# TypeScript Next.js example
 
-Este é um projeto utilizando o [Next.js](https://nextjs.org/) iniciado com o comando [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a really simple project that shows the usage of Next.js with TypeScript.
 
-### Siga este vídeo tutorial completo (PT-Br) 
-- [Youtube](https://www.youtube.com/watch?v=9eI0o8io7I0&list=PLkFMdTTdI9c2js2bPRUhChVA0jdI)
+## Deploy your own
 
-## Começando
+Deploy the example using [Vercel](https://vercel.com):
 
-Primeiramente rode em modo de desenvolvimento:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
+
+## How to use it?
+
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
 ```bash
-npm run dev
+npx create-next-app --example with-typescript with-typescript-app
 # or
-yarn dev
+yarn create next-app --example with-typescript with-typescript-app
 ```
 
-[![Rode agora no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Frameworks-JS/NextJS-Tutorial)
+Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
+## Notes
 
-Abra na sua máquina [http://localhost:3000](http://localhost:3000) no seu navegador e veja o resultado.
+This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
 
-Você pode iniciar, modificando a página `pages/index.js`. A página atualizada assim que salvá-la (hot-reload).
+```
+npm install --save-dev typescript
+```
 
-## Aprenda mais
+To enable TypeScript's features, we install the type declarations for React and Node.
 
-Para aprender mais sobre Next.js, dê uma olhada nas seguintes fontes:
+```
+npm install --save-dev @types/react @types/react-dom @types/node
+```
 
-- [Documentação Next.js](https://nextjs.org/docs) - Aprenda sobre Next.js - funcionalidades e API.
-- [Aprenda Next.js](https://nextjs.org/learn) - um tutorial interativo Next.js.
+When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
 
-Confira [O repositório Next.js](https://github.com/vercel/next.js/) - Suas contribuições são bem vindas!
+Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
 
-## Deploy na Vercel (Publicando na Web)
-
-O jeito mais fácil de publicar sua aplicação Next.js é usar a plataforma [Vercel](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) dos mesmos criadores do Next.js.
-
-Confira a documentação: [Publicando com Next.js](https://nextjs.org/docs/deployment).
+A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
