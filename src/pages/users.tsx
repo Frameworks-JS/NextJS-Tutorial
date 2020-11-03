@@ -1,15 +1,20 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import Link from 'next/link'
 
 //Server Side Generator
 import axios from 'axios';
+import { User } from '../../api/User';
 
-function Users({users}) {
+export interface UsersProps {
+    users?: User[];
+    //ou users: User[] ! undefined;
+}
+
+function Users({ users }: UsersProps) {
     // console.log(users);
     return (
         <div>
             {users.map((user) => (
-                
               <div key={user.id}>
                   
                   <Link href='/profile/[id]' as={`profile/${user.id}`}>

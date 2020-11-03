@@ -1,7 +1,16 @@
 import {useRouter} from 'next/router';
 import axios from 'axios';
+import { User } from '../../../api/User';
 
-function Profile({user}) {
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+// https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+
+export interface UserProps {
+  user: User;
+}
+
+// function Profile({user} : UserProps) {
+function Profile({user} : InferGetStaticPropsType<typeof getStaticProps>) {
     //ou user = props.user;
     const router = useRouter();
 
@@ -16,7 +25,7 @@ function Profile({user}) {
     </div>;
 }
 
-export async function getStaticProps(context) {
+export const getStaticProps: GetStaticProps<UserProps> = async (context) => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/users',
     { params: { id: context.params.id } }
     );
@@ -32,7 +41,8 @@ export async function getStaticProps(context) {
     }
   }
 
-  export async function getStaticPaths() {
+  // export async function getStaticPaths() { //sem tipagem TS
+export const getStaticPaths: GetStaticPaths = async () => { 
     const response = await axios.get(
       'https://jsonplaceholder.typicode.com/users'
     );
@@ -50,3 +60,5 @@ export async function getStaticProps(context) {
 }
 
 export default Profile;
+
+//Video desta parte https://youtu.be/Z27sJSFZ9k8?list=PLkFMdTTdI9c2js2bPRUhChVA0jdI-358s
